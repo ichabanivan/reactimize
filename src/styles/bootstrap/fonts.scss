@@ -1,0 +1,95 @@
+// Example:
+// .fz-${size}
+$font-sizes: ();
+$font-sizes: map-merge((
+  0: 0,
+  10: 10px,
+  12: 12px,
+  14: 14px,
+  16: 16px,
+  18: 18px,
+  20: 20px,
+), $font-sizes);
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    // xs: 0,
+    // sm: 576px,
+    // md: 768px,
+    // lg: 992px,
+    // xl: 1200px
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    // $prop - font-size
+    // $abbrev - fz
+    @each $prop, $abbrev in (font-size: fz) {
+      // 0: 0 px etc...
+      @each $size, $length in $font-sizes {
+        .#{$abbrev}#{$infix}-#{$size} {
+          #{$prop}: $length !important;
+        }
+      }
+    }
+  }
+}
+
+// Example:
+// .lh-${size}
+$line-heights: ();
+$line-heights: map-merge((
+  0: 0,
+  15: 15px,
+  20: 20px,
+  25: 25px,
+  30: 30px,
+  40: 40px,
+  45: 45px,
+  66: 66px,
+  100: 100px,
+), $line-heights);
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    // xs: 0,
+    // sm: 576px,
+    // md: 768px,
+    // lg: 992px,
+    // xl: 1200px
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    // $prop - font-size
+    // $abbrev - fz
+    @each $prop, $abbrev in (line-height: lh) {
+      // 0: 0 px etc...
+      @each $size, $length in $line-heights {
+        .#{$abbrev}#{$infix}-#{$size} {
+          #{$prop}: $length !important;
+        }
+      }
+    }
+  }
+}
+
+// Example:
+// .ws-{option}
+$ws: ();
+$ws: map-merge((
+  normal: normal,
+  nowrap: nowrap,
+), $ws);
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    // xs: 0,
+    // sm: 576px,
+    // md: 768px,
+    // lg: 992px,
+    // xl: 1200px
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @each $prop, $abbrev in (white-space: ws) {
+      @each $type, $val in $ws {
+        .#{$abbrev}#{$infix}-#{$type} {
+          #{$prop}: $val !important;
+        }
+      }
+    }
+  }
+}
