@@ -1,0 +1,12 @@
+{
+  "baseUrl": "/",
+  "DEBUG": false,
+  "production": false,
+  "serviceUrl": "",
+  "websiteUrl": "",
+  "apiPath": "/api",
+  "defaultLanguage": "en",
+  "defaultDirection": "rtl",
+  "translations": "/translations",
+  "basic": "Basic Y2JjLWNsaWVudDo="
+}
