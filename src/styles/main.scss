@@ -1,2 +1,15 @@
 @import "libs";
 @import "base";
+
+.temp-controls {
+  position: fixed;
+  bottom: 0;
+
+  @include rtl {
+    right: 0;
+  }
+
+  @include  ltr {
+    right: 0;
+  }
+}
