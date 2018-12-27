@@ -1,0 +1,48 @@
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    display: block;
+
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+
+    content: "";
+  }
+
+  & > .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+// Arabic
+@mixin ar {
+  html[lang=ar] & {
+    @content;
+  }
+}
+
+// English
+@mixin en {
+  html[lang=en] & {
+    @content;
+  }
+}
+
+// RTL direction
+@mixin rtl {
+  html[dir=rtl] & {
+    @content;
+  }
+}
+
+// LTR direction
+@mixin ltr {
+  html[dir=ltr] & {
+    @content;
+  }
+}

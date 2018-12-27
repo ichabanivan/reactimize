@@ -25,3 +25,4 @@ yarn-error.log*
 .idea/
 /src/constants/app-config.js
 /package-lock.json
+!/yarn-error.log
