@@ -27,8 +27,11 @@
     "reselect": "^4.0.0"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "cracos build",
+    "react-start": "craco start",
+    "start": "gulp && npm run react-start",
+    "build": "gulp && npm run react-build",
+    "react-build": "craco build",
+    "gulp": "gulp build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },

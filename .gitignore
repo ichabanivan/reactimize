@@ -20,9 +20,8 @@
 
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
+yarn-error.log
 
 .idea/
 /src/constants/app-config.js
 /package-lock.json
-!/yarn-error.log
